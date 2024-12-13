@@ -21,7 +21,7 @@ def main():
         header = f":loudspeaker: *『인사총무팀 공지』* <!channel>\n\n"
 
         notice_msg = (
-            f"안녕하세요? 평택 클러스터 구성원 여러분\n"
+            f"안녕하세요? 평택 클러스터 구성원 여러분!\n"
             f"\n"
             f"\n"
             f":체크1: *12월9일 신규 입사자 사물함 배정을* 공지 드리오니 이용에 참고 부탁드립니다.\n\n"
@@ -39,7 +39,7 @@ def main():
             f"감사합니다.\n\n"
             f"\n"
             f"\n"
-            f"*사물함을 확인 해주세요!! (Click) (Click) :point_right: <https://docs.google.com/spreadsheets/d/1bS8lkrROJI9X0E2NaC8Z9ha9XXYBihwwOT5UzITxFF8/edit?usp=sharing|신규입사자 개인 사물함 배정>*\n"
+            f"* (Click) (Click) :point_right: <https://docs.google.com/spreadsheets/d/1bS8lkrROJI9X0E2NaC8Z9ha9XXYBihwwOT5UzITxFF8/edit?usp=sharing|신규 입사자 개인 사물함 배정 현황>*\n"
         )
  
         # 메시지 본문
