@@ -1,4 +1,4 @@
-name: Notify Slack with Date
+name: slack CI
 
 on:
   workflow_dispatch:
