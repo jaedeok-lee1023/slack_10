@@ -1,9 +1,9 @@
-name: slack CI
+name: Notify Slack with Date
 
 on:
   workflow_dispatch:
   schedule:
-  - cron: "0 7 * * 1" # 세계 표준시 기준으로 07시는 한국시간 오후 16시 매주 월요일 적용
+    - cron: "0 6 * * *" # UTC 기준, 매일 오전 6시에 실행 (한국시간 오후 3시)
   
 jobs:
   post_announcement_message:
