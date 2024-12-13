@@ -1,23 +1,24 @@
 import os
+
+import arrow
+from dotenv import load_dotenv
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
+from kurly import clusters
 
-# 환경 변수에서 Slack 토큰 및 날짜 정보 로드
+# 환경 변수에서 Slack 토큰, 채널을 로드
+load_dotenv()
 SLACK_TOKEN = os.environ.get("SLACK_TOKEN")
-CURRENT_DATE = os.environ.get("CURRENT_DATE")  # GitHub Actions에서 전달된 날짜
-SLACK_CHANNEL = os.environ.get("SLACK_CHANNEL")  # GitHub Actions에서 전달된 채널
-
 def send_slack_message(message, channel):
     try:
         client = WebClient(token=SLACK_TOKEN)
         client.chat_postMessage(channel=channel, text=message)
-        print(f"Message sent to {channel}")
     except SlackApiError as e:
-        print(f"Error sending message to {channel}: {e.response['error']}")
-
+        print(f"Error sending message to {channel} : {e}")
 def main():
-    # 메시지 제목 설정
-    header = f":loudspeaker: *『인사총무팀 공지』* <!channel>\n\n"
+    for cluster in clusters:
+        # 메시지 제목 설정
+        header = f":loudspeaker: *『인사총무팀 공지』* <!channel>\n\n"
 
         notice_msg = (
             f"안녕하세요? 평택 클러스터 구성원 여러분!\n"
