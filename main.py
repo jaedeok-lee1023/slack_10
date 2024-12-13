@@ -39,7 +39,7 @@ def main():
             f"감사합니다.\n\n"
             f"\n"
             f"\n"
-            f"* (Click) (Click) :point_right: <https://docs.google.com/spreadsheets/d/1bS8lkrROJI9X0E2NaC8Z9ha9XXYBihwwOT5UzITxFF8/edit?usp=sharing|신규 입사자 개인 사물함 배정 현황>*\n"
+            f" *(Click) (Click) :point_right: <https://docs.google.com/spreadsheets/d/1bS8lkrROJI9X0E2NaC8Z9ha9XXYBihwwOT5UzITxFF8/edit?usp=sharing|신규 입사자 개인 사물함 배정 현황>*\n"
         )
  
         # 메시지 본문
