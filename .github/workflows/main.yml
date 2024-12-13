@@ -12,7 +12,6 @@ jobs:
       - name: action code checkout
         uses: actions/checkout@v3
       - name: Set up Python 3.10
-      - run: echo "CURRENT_DATE=$(date '+%m/%d')" >> $GITHUB_ENV
       
         uses: actions/setup-python@v4
         with:
