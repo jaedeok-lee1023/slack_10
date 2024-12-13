@@ -9,6 +9,7 @@ from kurly import clusters
 # 환경 변수에서 Slack 토큰, 채널을 로드
 load_dotenv()
 SLACK_TOKEN = os.environ.get("SLACK_TOKEN")
+uses: slackapi/slack-github-action@v1.23.0
 def send_slack_message(message, channel):
     try:
         client = WebClient(token=SLACK_TOKEN)
@@ -24,7 +25,7 @@ def main():
             f"안녕하세요? 평택 클러스터 구성원 여러분!\n"
             f"\n"
             f"\n"
-            f":체크1: * ${{ env.CURRENT_DATE }} 신규 입사자 사물함 배정을* 공지 드리오니 이용에 참고 부탁드립니다.\n\n"
+            f":white_check_mark: *${{ env.CURRENT_DATE }} 신규 입사자 사물함 배정을* 공지 드리오니 이용에 참고 부탁드립니다. 😊\n\n"
             f"\n"
             f"\n"
             f":ck11: *사물함 장소* 는 *6층* 에 있습니다.\n"
