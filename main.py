@@ -1,31 +1,29 @@
 import os
-
-import arrow
-from dotenv import load_dotenv
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
-from kurly import clusters
 
-# 환경 변수에서 Slack 토큰, 채널을 로드
-load_dotenv()
+# 환경 변수에서 Slack 토큰 및 날짜 정보 로드
 SLACK_TOKEN = os.environ.get("SLACK_TOKEN")
-uses: slackapi/slack-github-action@v1.23.0
+CURRENT_DATE = os.environ.get("CURRENT_DATE")  # GitHub Actions에서 전달된 날짜
+SLACK_CHANNEL = os.environ.get("SLACK_CHANNEL")  # GitHub Actions에서 전달된 채널
+
 def send_slack_message(message, channel):
     try:
         client = WebClient(token=SLACK_TOKEN)
         client.chat_postMessage(channel=channel, text=message)
+        print(f"Message sent to {channel}")
     except SlackApiError as e:
-        print(f"Error sending message to {channel} : {e}")
+        print(f"Error sending message to {channel}: {e.response['error']}")
+
 def main():
-    for cluster in clusters:
-        # 메시지 제목 설정
-        header = f":loudspeaker: *『인사총무팀 공지』* <!channel>\n\n"
+    # 메시지 제목 설정
+    header = f":loudspeaker: *『인사총무팀 공지』* <!channel>\n\n"
 
         notice_msg = (
             f"안녕하세요? 평택 클러스터 구성원 여러분!\n"
             f"\n"
             f"\n"
-            f":white_check_mark: *${{ env.CURRENT_DATE }} 신규 입사자 사물함 배정을* 공지 드리오니 이용에 참고 부탁드립니다. 😊\n\n"
+            f":white_check_mark: *{CURRENT_DATE} 신규 입사자 사물함 배정을* 공지 드리오니 이용에 참고 부탁드립니다. 😊\n\n"
             f"\n"
             f"\n"
             f":ck11: *사물함 장소* 는 *6층* 에 있습니다.\n"
