@@ -36,8 +36,10 @@ def main():
             f"\n"
             f" 배정 받으신 사물함 번호를 모르실 경우 *인사총무팀 총무/시설 담당자* 에게 연락 바랍니다.\n\n"
             f"\n"
-            f"감사합니다.\n"
-            f"*(Click):point_right: <https://docs.google.com/spreadsheets/d/1bS8lkrROJI9X0E2NaC8Z9ha9XXYBihwwOT5UzITxFF8/edit?usp=sharing|신규입사자 개인 사물함 배정>*\n"
+            f"감사합니다.\n\n"
+            f"\n"
+            f"\n"
+            f"*사물함을 확인 해주세요!! (Click) (Click) :point_right: <https://docs.google.com/spreadsheets/d/1bS8lkrROJI9X0E2NaC8Z9ha9XXYBihwwOT5UzITxFF8/edit?usp=sharing|신규입사자 개인 사물함 배정>*\n"
         )
  
         # 메시지 본문
