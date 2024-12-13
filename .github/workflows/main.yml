@@ -6,12 +6,12 @@ on:
     - cron: "0 6 * * *" # UTC 기준, 매일 오전 6시에 실행 (한국시간 오후 3시)
   
 jobs:
-  post_announcement_message:
+  send-slack-message:
     runs-on: ubuntu-latest
     steps:
-      - name: action code checkout
-        uses: actions/checkout@v3
-      - name: Set up Python 3.10
+      # 1. 현재 날짜를 환경 변수에 저장
+      - name: Set current date
+        run: echo "CURRENT_DATE=$(date '+%m/%d')" >> $GITHUB_ENV
       
         uses: actions/setup-python@v4
         with:
