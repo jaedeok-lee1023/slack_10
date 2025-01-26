@@ -3,7 +3,7 @@ name: slack CI
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 8 * * 1" # UTC 기준, 매주 월요일 오전 8시에 실행 (한국시간 오후 5시)
+    - cron: 
   
 jobs:
   post_announcement_message:
