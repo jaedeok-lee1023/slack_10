@@ -41,7 +41,7 @@ def send_slack_message(message, channel):
 def main():
     for cluster in clusters:
         # 메시지 제목 설정
-        header = f"*[공지｜신규입사자 사물함 배정 안]*\n\n\n"
+        header = f"*[공지｜신규입사자 사물함 배정 안내]*\n\n\n"
 
         notice_msg = (
             f"1. *중요도* : 하\n"
